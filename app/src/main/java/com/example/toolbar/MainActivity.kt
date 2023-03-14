@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +22,21 @@ class MainActivity : AppCompatActivity() {
 
     // Arrow icon onClick Listener
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == android.R.id.home) finish()
+        when(item.itemId){
+            android.R.id.home -> finish()
+            R.id.delete ->{
+                Toast.makeText(this, "Delete", Toast.LENGTH_SHORT).show()
+            }
+            R.id.save -> {
+                Toast.makeText(this, "Save", Toast.LENGTH_SHORT).show()
+            }
+            R.id.search -> {
+                Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show()
+            }
+            R.id.sync ->{
+                Toast.makeText(this, "Sync", Toast.LENGTH_SHORT).show()
+            }
+        }
         return true
     }
 }
